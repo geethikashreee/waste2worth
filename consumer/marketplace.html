@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Waste2Worth — Consumer Marketplace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="status"><span>● LIVE</span><span>CONSUMER MARKETPLACE</span><span>AI MATCHING ACTIVE</span><span class="right">WASTE2WORTH</span></div>
+<header class="nav">
+  <a class="brand" href="../index.html"><i></i>WASTE<span>2</span>WORTH <small>B2B</small></a>
+  <nav><a href="marketplace.html" class="active">Marketplace</a><a href="#how">How it works</a><a href="#requirements">My requirements</a></nav>
+  <a class="signin" href="../index.html">Sign in</a>
+  <a class="post" href="#requirements">Post a requirement →</a>
+</header>
+
+<main>
+<section class="market-head">
+  <div>
+    <div class="eyebrow"><span class="icon">⌂</span> CONSUMER MARKETPLACE</div>
+    <h1>Find industrial inputs<br><em>that fit your process.</em></h1>
+    <p>Discover verified materials from producers and processors, filtered by your material requirements, quantity, quality and location.</p>
+  </div>
+  <div class="count">24<br><small>available matches</small></div>
+</section>
+
+<section class="toolbar">
+  <div class="search"><span>⌕</span><input id="search" placeholder="Search material, grade, property or location..." oninput="filterCards()"></div>
+  <div class="filters">
+    <button class="selected" onclick="setFilter('All',this)">All</button>
+    <button onclick="setFilter('Metal',this)">Metal</button>
+    <button onclick="setFilter('E-waste',this)">E-waste</button>
+    <button onclick="setFilter('Plastic',this)">Plastic</button>
+    <button onclick="setFilter('Paper',this)">Paper</button>
+    <button onclick="setFilter('Minerals',this)">Minerals</button>
+  </div>
+  <div class="sort">◷ <b>Best match</b> &nbsp; Price: Low → High &nbsp; Price: High → Low</div>
+</section>
+
+<section class="listing-grid" id="listings">
+  <article class="listing" data-cat="Plastic" data-search="peek fabric scrap plastic bhandi maharashtra 1200 kg">
+    <a class="photo photo1" href="listing.html"></a><div class="tag">● Plastic · PEEK</div>
+    <div class="body"><h2>1200 kg PEEK fabric scrap cut pieces</h2><p>Verified producer · Bhiwandi, Maharashtra</p>
+      <div class="metrics"><div><small>AI MATCH</small><strong>96%</strong></div><div><small>AVAILABLE</small><strong>1200 kg</strong></div><div><small>ASKING</small><strong>₹500<small>/kg</small></strong></div></div>
+      <div class="bottom"><span>◉ Bhiwandi</span><b>View material →</b></div>
+    </div>
+  </article>
+
+  <article class="listing" data-cat="Metal" data-search="ss 304 sheet cuttings bright bar grade metal mumbai 1200 kg">
+    <a class="photo photo2" href="listing.html"></a><div class="tag">● Metal · Stainless Steel</div>
+    <div class="body"><h2>SS 304 Sheet Cuttings — Bright Bar Grade</h2><p>Verified producer · Mumbai, Maharashtra</p>
+      <div class="metrics"><div><small>AI MATCH</small><strong>93%</strong></div><div><small>AVAILABLE</small><strong>1200 kg</strong></div><div><small>ASKING</small><strong>₹110<small>/kg</small></strong></div></div>
+      <div class="bottom"><span>◉ Mumbai</span><b>View material →</b></div>
+    </div>
+  </article>
+
+  <article class="listing" data-cat="Metal" data-search="aluminium extrusion scrap 6063 metal mumbai 800 kg">
+    <a class="photo photo3" href="listing.html"></a><div class="tag">● Metal · Aluminium</div>
+    <div class="body"><h2>Aluminium Extrusion Scrap (6063)</h2><p>Verified producer · Mumbai, Maharashtra</p>
+      <div class="metrics"><div><small>AI MATCH</small><strong>91%</strong></div><div><small>AVAILABLE</small><strong>800 kg</strong></div><div><small>ASKING</small><strong>₹140<small>/kg</small></strong></div></div>
+      <div class="bottom"><span>◉ Mumbai</span><b>View material →</b></div>
+    </div>
+  </article>
+
+  <article class="listing" data-cat="Minerals" data-search="steel slag high grade mineral chennai 240 mt">
+    <a class="photo photo4" href="listing.html"></a><div class="tag">● Minerals · Slag</div>
+    <div class="body"><h2>Steel Slag — High Grade</h2><p>Verified producer · Chennai, Tamil Nadu</p>
+      <div class="metrics"><div><small>AI MATCH</small><strong>89%</strong></div><div><small>AVAILABLE</small><strong>240 MT</strong></div><div><small>ASKING</small><strong>₹2,800<small>/MT</small></strong></div></div>
+      <div class="bottom"><span>◉ Chennai</span><b>View material →</b></div>
+    </div>
+  </article>
+
+  <article class="listing" data-cat="E-waste" data-search="server boards e waste electronics bengaluru 450 kg">
+    <a class="photo photo5" href="listing.html"></a><div class="tag">● E-waste · Boards</div>
+    <div class="body"><h2>Mixed Server Boards — Grade A</h2><p>Verified processor · Bengaluru, Karnataka</p>
+      <div class="metrics"><div><small>AI MATCH</small><strong>87%</strong></div><div><small>AVAILABLE</small><strong>450 kg</strong></div><div><small>ASKING</small><strong>₹380<small>/kg</small></strong></div></div>
+      <div class="bottom"><span>◉ Bengaluru</span><b>View material →</b></div>
+    </div>
+  </article>
+
+  <article class="listing" data-cat="Plastic" data-search="hdpe industrial scrap polymer hosur 32 mt">
+    <a class="photo photo6" href="listing.html"></a><div class="tag">● Plastic · HDPE</div>
+    <div class="body"><h2>HDPE Industrial Scrap — Natural</h2><p>Verified producer · Hosur, Tamil Nadu</p>
+      <div class="metrics"><div><small>AI MATCH</small><strong>84%</strong></div><div><small>AVAILABLE</small><strong>32 MT</strong></div><div><small>ASKING</small><strong>₹62<small>/kg</small></strong></div></div>
+      <div class="bottom"><span>◉ Hosur</span><b>View material →</b></div>
+    </div>
+  </article>
+</section>
+
+<section id="how" class="how">
+  <div class="eyebrow">HOW CONSUMER MATCHING WORKS</div>
+  <h2>Search by what your process <em>needs.</em></h2>
+  <div class="how-grid"><div><b>01</b><h3>Post your requirement</h3><p>Define material type, quantity, grade, properties and delivery location.</p></div><div><b>02</b><h3>AI finds compatible supply</h3><p>Waste2Worth compares your requirements with available material fingerprints.</p></div><div><b>03</b><h3>Compare the pathway</h3><p>Review compatibility, logistics, processing and estimated impact before requesting an exchange.</p></div></div>
+</section>
+
+<section id="requirements" class="requirement"><div><div class="eyebrow">CONSUMER WORKSPACE</div><h2>Need a specific input?</h2><p>Create a requirement and let the matching engine surface suitable material.</p></div><a href="#" onclick="alert('Requirement form can be connected to the consumer backend next.');return false">Create requirement →</a></section>
+</main>
+<script>
+let active='All';
+function setFilter(cat,btn){active=cat;document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');filterCards();}
+function filterCards(){const q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.listing').forEach(c=>{const okCat=active==='All'||c.dataset.cat===active;const okText=c.dataset.search.includes(q);c.style.display=okCat&&okText?'block':'none';});}
+</script>
+</body>
+</html>
