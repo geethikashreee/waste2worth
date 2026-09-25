@@ -1,9 +1,289 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Waste2Worth — Industrial Resource Exchange</title><link rel="stylesheet" href="styles.css"></head><body>
-<header class="nav"><a class="brand" href="index.html"><i></i>WASTE<span>2</span>WORTH</a><nav><a href="#marketplace">Marketplace</a><a href="#how">How it works</a></nav><button class="green" onclick="openRole()">Sign in to trade →</button></header>
-<main>
-<section class="hero"><div class="kicker">INDIA'S INDUSTRIAL RESOURCE EXCHANGE</div><h1>Turn industrial<br>by-products into <em>value.</em></h1><p>List your material. Discover compatible consumers, processors and alternative applications — then compare the pathway before you exchange.</p><div class="chips"><span>✓ Material fingerprinting</span><span>✓ Multi-hop pathways</span><span>✓ Digital passports</span></div></section>
-<section id="marketplace" class="section"><div class="kicker">01 · MARKETPLACE</div><h2>What is waste here<br>can be <em>input there.</em></h2><p class="lead">Explore industrial material opportunities across metals, e-waste, polymers, minerals, paper and mixed streams.</p><div class="market"><article><small>OPEN</small><b>Steel Slag — High Grade</b><span>240 MT · Chennai</span><strong>94% match</strong></article><article><small>OPEN</small><b>Aluminium Offcuts</b><span>18 MT · Hosur</span><strong>88% match</strong></article><article><small>OPEN</small><b>HDPE Industrial Scrap</b><span>32 MT · Bengaluru</span><strong>81% match</strong></article></div></section>
-<section id="how" class="section process"><div class="kicker">02 · PROCESS</div><h2>List, match, <em>exchange.</em></h2><div class="cards"><article><b>01</b><h3>Register</h3><p>Create a material fingerprint with quantity, composition, quality and location.</p></article><article><b>02</b><h3>AI matching</h3><p>Find direct buyers, processors and alternative applications.</p></article><article><b>03</b><h3>Compare pathways</h3><p>Evaluate compatibility, logistics, processing, cost, time and impact estimates.</p></article><article><b>04</b><h3>Exchange</h3><p>Move from request and negotiation to a traceable material record.</p></article></div></section>
-<section class="categories section"><div class="kicker">03 · CATEGORIES</div><h2>Industrial material <em>types.</em></h2><div class="catgrid"><div>Metals<small>Steel · aluminium · copper</small></div><div>E-waste<small>Boards · electronics · servers</small></div><div>Polymers<small>HDPE · PP · PET · PVC</small></div><div>Minerals<small>Slag · ash · sand</small></div><div>Paper & Fibre<small>OCC · packaging · fibre</small></div><div>Mixed Industrial<small>Multi-material streams</small></div></div></section>
-<section class="why section"><div class="kicker">04 · WHY WASTE2WORTH</div><h2>Built for industrial <em>material flows.</em></h2><div class="cards"><article><b>01</b><h3>Material-first discovery</h3><p>Match by properties and requirements, not only keywords.</p></article><article><b>02</b><h3>Pathway visibility</h3><p>Surface processor and alternative-use routes when direct exchange is unavailable.</p></article><article><b>03</b><h3>Traceable exchange</h3><p>Keep listings, requests, documents and exchange history connected.</p></article></div></section>
-</main><div id="role" class="modal"><div class="modalbox"><button class="close" onclick="closeRole()">×</button><div class="kicker">SIGN IN TO TRADE</div><h2>Choose your workspace.</h2><p>One sign-in entry for both sides of the marketplace.</p><div class="rolegrid"><a href="trader/login.html">Trader →<small>Sign in to your trading workspace</small></a><a href="consumer/marketplace.html">Consumer →<small>Enter the consumer marketplace</small></a></div></div></div><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Waste2Worth — Industrial Resource Marketplace</title>
+<meta name="description" content="Waste2Worth is an industrial resource marketplace connecting traders and consumers with valuable industrial materials.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#075b36;--green-dark:#04472a;--ink:#111512;--muted:#647069;
+  --paper:#f5f6f1;--white:#fff;--line:#dce1dc;--lime:#c4dd78;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}
+button,a{font:inherit}.topbar{height:30px;background:#080a09;color:#d8dfda;display:flex;align-items:center;padding:0 5.5%;gap:28px;font:600 9px "DM Sans";letter-spacing:.17em}
+.topbar .live:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#3aa867;margin-right:8px}.topbar .right{margin-left:auto;color:#8e9891}
+.nav{height:72px;background:#fff;border-bottom:1px solid #e8ebe7;display:flex;align-items:center;padding:0 5.5%;position:sticky;top:0;z-index:20}
+.logo{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font:700 21px "DM Sans";letter-spacing:-.05em}.logo-mark{width:35px;height:30px;background:#101311;clip-path:polygon(22% 0,100% 0,76% 31%,53% 31%,30% 62%,100% 62%,78% 100%,0 100%)}.logo span:last-child span{color:var(--green)}
+.logo small{font-size:9px;border:1px solid #d6dcd7;border-radius:4px;padding:4px 6px;margin-left:4px;letter-spacing:.08em;color:#78817b}
+.nav-links{display:flex;gap:34px;margin-left:auto;margin-right:34px}.nav-links a{font-size:14px;color:#151916;text-decoration:none}.nav-links a:hover{color:var(--green)}
+.nav-actions{display:flex;align-items:center}.trade-btn{border:0;background:var(--green);color:#fff;border-radius:8px;padding:13px 18px;font-weight:700;cursor:pointer}.trade-btn:hover{background:var(--green-dark)}.primary{border:0;background:var(--green);color:#fff;border-radius:8px;padding:12px 17px;font-weight:600;cursor:pointer}.primary:hover{background:var(--green-dark)}
+.menu{display:none;margin-left:auto;border:0;background:none;font-size:25px}
+.hero{min-height:650px;position:relative;overflow:hidden;background:linear-gradient(105deg,#edf1ec 0%,#e6ede7 48%,#d3ddd4 100%)}
+.hero:before{content:"";position:absolute;inset:0;opacity:.3;background-image:radial-gradient(circle,#7b9982 0 2px,transparent 2.5px),radial-gradient(circle,#8da293 0 1.5px,transparent 2px);background-size:85px 65px,125px 90px}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(245,246,241,.94),rgba(245,246,241,.38) 62%,rgba(245,246,241,.22))}
+.hero-inner{position:relative;z-index:2;max-width:1250px;margin:auto;padding:105px 5.5% 85px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:70px}
+.badge{display:inline-flex;align-items:center;padding:9px 14px;border:1px solid rgba(25,85,53,.14);background:#ffffffc9;border-radius:999px;color:var(--green);font-size:12px;margin-bottom:24px}.badge:before{content:"";width:6px;height:6px;border-radius:50%;background:#23804e;margin-right:8px}
+h1{font:700 clamp(57px,6.5vw,91px)/.91 "DM Sans";letter-spacing:-.075em;margin:0 0 28px}h1 em{font-family:"Playfair Display";font-weight:500;color:var(--green)}
+.hero p{font-size:18px;line-height:1.6;color:#4c5a51;max-width:640px;margin:0 0 30px}
+.hero-buttons{display:flex;gap:10px}.role-btn{border-radius:8px;padding:14px 19px;font-weight:700;cursor:pointer}.trader{background:var(--green);border:1px solid var(--green);color:#fff}.consumer{background:#fff;border:1px solid #bac3bc;color:#101512}.hero-proof{display:flex;gap:22px;flex-wrap:wrap;color:#69736c;font-size:11px;margin-top:25px}.hero-proof span:before{content:"✓";color:var(--green);margin-right:6px;font-weight:700}
+.market-preview{background:#fffffff0;border:1px solid #dce2dd;border-radius:14px;box-shadow:0 25px 65px #203d2a24;overflow:hidden}.market-head{height:53px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 20px;color:#66726a;font:600 9px "DM Sans";letter-spacing:.12em}.dot{display:inline-block;width:7px;height:7px;background:#25804e;border-radius:50%;margin-right:7px}.listing{display:grid;grid-template-columns:8px 1fr auto;gap:12px;align-items:center;padding:15px 20px;border-bottom:1px solid #e7eae7}.listing .bullet{width:7px;height:7px;background:#23784b;border-radius:50%}.listing strong{display:block;font-size:13px;margin-bottom:4px}.listing small{font-size:10px;color:#89918c}.listing .price{font-size:16px;font-weight:700;text-align:right}.listing .price small{display:block;font-weight:400}.market-foot{padding:17px 20px;display:flex;justify-content:space-between;color:#7b857e;font-size:9px;letter-spacing:.12em}.market-foot button{border:0;background:none;color:#667169;font-size:9px;font-weight:700;letter-spacing:.1em;cursor:pointer}
+.role-section{background:#fff;border-bottom:1px solid var(--line);padding:52px 5.5%}.role-inner{max-width:1150px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}.role-card{border:1px solid var(--line);border-radius:11px;padding:28px;background:#fff;display:flex;justify-content:space-between;align-items:end;transition:.2s}.role-card:hover{transform:translateY(-2px);box-shadow:0 15px 40px #203d2a0d}.role-card h3{font-size:25px;margin:0 0 8px}.role-card p{font-size:12px;color:var(--muted);max-width:380px;line-height:1.6;margin:0}.role-card button{border:0;background:#edf3ec;color:var(--green);border-radius:7px;padding:10px 12px;font-weight:700;white-space:nowrap}
+.section{max-width:1250px;margin:auto;padding:100px 5.5%}.kicker{font:700 10px "DM Sans";letter-spacing:.16em;color:#68736c;margin-bottom:15px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}.section-head h2{font:600 51px/.98 "DM Sans";letter-spacing:-.065em;margin:0}.section-head h2 em{font:500 1em "Playfair Display";font-style:italic;color:var(--green)}.section-head p{max-width:370px;color:var(--muted);font-size:13px;line-height:1.7}
+.market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.material-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:23px}.tag{display:inline-block;padding:6px 8px;border-radius:4px;background:#e8f1e4;color:#477138;font-size:9px;font-weight:700;letter-spacing:.08em}.tag.amber{background:#fff0d7;color:#8a5c1c}.material-card h3{font-size:22px;letter-spacing:-.03em;margin:24px 0 5px}.sub{font-size:11px;color:#858e88}.meta{display:flex;justify-content:space-between;border-block:1px solid var(--line);padding:16px 0;margin:18px 0}.meta b{font-size:17px}.meta span{font-size:11px;color:#808982}.card-bottom{display:flex;justify-content:space-between;align-items:center}.card-bottom small{color:#818a84;font-size:10px}.card-bottom button{border:0;background:none;color:var(--green);font-size:11px;font-weight:700;cursor:pointer}
+.how{border-top:1px solid var(--line)}.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}.step{padding:27px 25px 5px 0;margin-right:25px;border-right:1px solid var(--line);min-height:220px}.step:last-child{border:0}.step-num{font-size:10px;color:#89918b}.step h3{font-size:21px;margin:30px 0 10px}.step p{font-size:13px;line-height:1.7;color:#6b756e}
+
+
+footer{background:#09110c;color:#94a099;padding:35px 5.5%;display:flex;align-items:center;gap:35px}.footer-links{display:flex;gap:22px;margin:auto}.footer-links a{font-size:11px;color:#94a099;text-decoration:none}.footer-copy{font-size:9px}
+.modal{display:none;position:fixed;inset:0;background:#07120dcc;z-index:50;place-items:center;padding:20px}.modal.open{display:grid}.modal-card{background:#fff;width:min(450px,100%);border-radius:12px;padding:34px;position:relative}.close{position:absolute;right:14px;top:9px;border:0;background:none;font-size:28px;cursor:pointer}.modal-card h3{font-size:30px;margin:5px 0 9px}.modal-card p{color:var(--muted);line-height:1.6}.modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:22px}.modal-actions button{padding:13px;border-radius:7px;font-weight:700;cursor:pointer}.modal-actions .trader{border:1px solid var(--green)}.modal-actions .consumer{background:#fff}
+@media(max-width:900px){.nav-links,.nav-actions{display:none}.menu{display:block}.hero-inner{grid-template-columns:1fr}.role-inner,.market-grid,.steps{grid-template-columns:1fr 1fr}.role-card{display:block}.role-card button{margin-top:15px}.stats{grid-template-columns:1fr 1fr}footer{flex-wrap:wrap}}
+@media(max-width:580px){.topbar{gap:12px;font-size:7px}.topbar>div:nth-child(2),.topbar>div:nth-child(3){display:none}.hero-inner{padding:55px 5%}.hero h1{font-size:54px}.hero-buttons{flex-direction:column}.hero-buttons button{width:100%}.section{padding:70px 5%}.section-head{align-items:start;flex-direction:column}.section-head h2{font-size:42px}.market-grid,.role-inner,.steps,.metric-row{grid-template-columns:1fr}.listing:nth-child(n+5){display:none}.footer-links{margin:18px 0;flex-wrap:wrap}}
+
+.process-showcase{background:#fbfbf8}
+.process-layout{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:stretch}
+.process-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.process-card{padding:29px 30px 25px;min-height:245px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.process-card:nth-child(2n){border-right:0}
+.process-card:nth-child(n+3){border-bottom:0}
+.process-card .step-num{color:var(--green);font-weight:700;letter-spacing:.12em}
+.process-card h3{font-size:20px;letter-spacing:-.025em;margin:25px 0 11px}
+.process-card p{font-size:13px;color:#657069;line-height:1.7;margin:0}
+.process-card small{display:block;margin-top:22px;padding-top:14px;border-top:1px solid #e7eae6;color:#7e8981;font-size:9px;letter-spacing:.14em}
+.process-visual{min-height:520px;border-radius:15px;overflow:hidden;position:relative;background:
+linear-gradient(135deg,rgba(7,91,54,.96),rgba(6,47,31,.82)),
+repeating-linear-gradient(90deg,transparent 0 58px,rgba(255,255,255,.08) 59px 61px),
+repeating-linear-gradient(0deg,transparent 0 72px,rgba(255,255,255,.055) 73px 75px)}
+.process-visual:before,.process-visual:after{content:"";position:absolute;background:rgba(216,230,217,.12)}
+.process-visual:before{width:150%;height:20px;left:-20%;top:28%;transform:rotate(-14deg);box-shadow:0 70px 0 rgba(216,230,217,.09),0 140px 0 rgba(216,230,217,.07)}
+.process-visual:after{width:18px;height:130%;left:42%;top:-10%;transform:rotate(7deg);box-shadow:120px 0 0 rgba(216,230,217,.07),240px 0 0 rgba(216,230,217,.06)}
+.process-overlay{position:absolute;inset:0;padding:34px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,rgba(3,24,15,.15),rgba(3,24,15,.72))}
+.process-overlay .kicker{color:#c4dd78}
+.process-overlay h3{font-size:42px;line-height:1;letter-spacing:-.06em;max-width:420px;margin:10px 0}
+.process-overlay h3 em{font-family:"Playfair Display";font-weight:500;color:#c4dd78}
+.process-overlay p{max-width:440px;color:#d2dbd4;font-size:13px;line-height:1.7}
+.process-route{display:flex;align-items:center;gap:10px;font-size:10px;letter-spacing:.1em}
+.process-route span{background:#ffffff16;border:1px solid #ffffff2e;border-radius:7px;padding:10px 11px}.process-route b{color:#c4dd78}
+
+.categories-section{background:#f3f1ea}
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.category-card{background:#fbfbf8;border:1px solid var(--line);border-radius:12px;min-height:190px;padding:27px;position:relative;overflow:hidden}
+.category-card h3{font-size:20px;margin:0 0 10px;letter-spacing:-.03em}
+.category-card p{max-width:250px;margin:0;color:#68736c;font-size:13px;line-height:1.65}
+.category-icon{position:absolute;right:18px;bottom:8px;width:105px;height:105px;color:#dfe7df;opacity:.9}
+.category-icon svg{width:100%;height:100%}
+
+.why-section{position:relative;overflow:hidden;color:#fff;background:
+linear-gradient(90deg,rgba(4,39,25,.97),rgba(4,61,37,.86),rgba(4,39,25,.96)),
+repeating-linear-gradient(90deg,transparent 0 95px,rgba(255,255,255,.035) 96px 98px)}
+.why-section:before{content:"";position:absolute;inset:0;background:
+linear-gradient(25deg,transparent 0 45%,rgba(185,214,192,.09) 46% 47%,transparent 48% 100%),
+linear-gradient(-20deg,transparent 0 54%,rgba(185,214,192,.07) 55% 56%,transparent 57% 100%);opacity:.8}
+.why-inner{position:relative;z-index:1}
+.why-section .kicker{color:#c4dd78}
+.why-section h2{color:#fff}.why-section h2 em{color:#c4dd78}
+.why-intro{color:#c7d1ca;max-width:720px;font-size:15px;line-height:1.7;margin:0 0 42px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.why-card{background:#fbfbf8;color:#111512;border-radius:13px;padding:28px;min-height:250px}
+.why-card .step-num{color:var(--green);font-weight:700}
+.why-card h3{font-size:21px;margin:28px 0 12px}
+.why-card p{font-size:13px;color:#68736c;line-height:1.7;margin:0}
+
+
+@media(max-width:900px){
+ .process-layout{grid-template-columns:1fr}.process-visual{min-height:430px}.category-grid,.why-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:580px){
+ .process-grid{grid-template-columns:1fr}.process-card{border-right:0!important;border-bottom:1px solid var(--line)!important}.process-card:last-child{border-bottom:0!important}
+ .category-grid,.why-grid{grid-template-columns:1fr}.process-overlay h3{font-size:36px}.process-route{flex-wrap:wrap}
+}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="live">LIVE MARKETPLACE</div><div>12 MATERIALS LISTED</div><div>AI MATCHING ONLINE</div><div class="right">WASTE2WORTH.APP</div>
+</div>
+
+<header class="nav">
+  <a class="logo" href="index.html"><span class="logo-mark"></span><span>WASTE<span>2</span>WORTH</span><small>B2B</small></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#marketplace">Marketplace</a>
+    <a href="#how">How it works</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="trade-btn" onclick="openRoleModal('Sign in to trade')">Sign in to trade →</button>
+  </div>
+  <button class="menu" onclick="document.getElementById('navLinks').classList.toggle('show')">☰</button>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="badge">India's industrial resource marketplace</div>
+      <h1>Industrial materials.<br>New value.<br><em>One marketplace.</em></h1>
+      <p>Waste2Worth connects people who <strong>trade</strong> industrial materials with businesses that <strong>consume</strong> them — in one transparent marketplace.</p>
+      <div class="hero-buttons">
+        <button class="role-btn trader" onclick="openRoleModal('I am a Trader')">I’m a Trader →</button>
+        <button class="role-btn consumer" onclick="openRoleModal('I am a Consumer')">I’m a Consumer ↗</button>
+      </div>
+      <div class="hero-proof"><span>Verified material listings</span><span>AI-assisted discovery</span><span>Transparent pathways</span></div>
+    </div>
+
+    <aside class="market-preview">
+      <div class="market-head"><span><i class="dot"></i>LIVE MARKETPLACE</span><span>12 OPEN · ₹0 BIDS</span></div>
+      <div id="heroListings"></div>
+      <div class="market-foot"><span>12 MATERIALS OPEN</span><button onclick="document.getElementById('marketplace').scrollIntoView()">EXPLORE MARKETPLACE →</button></div>
+    </aside>
+  </div>
+</section>
+
+<section class="role-section">
+  <div class="role-inner">
+    <article class="role-card">
+      <div><div class="kicker">FOR TRADERS</div><h3>Have industrial material?</h3><p>List available material, share its verified properties and reach businesses looking for industrial inputs.</p></div>
+      <button onclick="openRoleModal('Trader')">Trade materials →</button>
+    </article>
+    <article class="role-card">
+      <div><div class="kicker">FOR CONSUMERS</div><h3>Need industrial material?</h3><p>Search the marketplace, compare available materials and connect with traders that match your requirements.</p></div>
+      <button onclick="openRoleModal('Consumer')">Find materials →</button>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="marketplace">
+  <div class="section-head">
+    <div><div class="kicker">01 · MARKETPLACE</div><h2>Find material.<br><em>Find its next use.</em></h2></div>
+    <p>Browse industrial materials currently available from traders. Detailed matching and exchange tools are available after signing in.</p>
+  </div>
+  <div class="filters">
+    <button class="filter active" onclick="filterMaterials('All',this)">All</button>
+    <button class="filter" onclick="filterMaterials('Metals',this)">Metals</button>
+    <button class="filter" onclick="filterMaterials('Minerals',this)">Minerals</button>
+    <button class="filter" onclick="filterMaterials('Polymers',this)">Polymers</button>
+  </div>
+  <div class="market-grid" id="materials"></div>
+</section>
+
+<section class="section how" id="how">
+  <div class="section-head">
+    <div><div class="kicker">02 · HOW IT WORKS</div><h2>Simple to trade.<br><em>Simple to source.</em></h2></div>
+    <p>Keep the public landing page focused. The detailed AI, logistics and transaction workflow lives inside the dashboard.</p>
+  </div>
+  <div class="steps">
+    <article class="step"><span class="step-num">01</span><h3>Join</h3><p>Choose your role as a Trader or Consumer and create your business profile.</p></article>
+    <article class="step"><span class="step-num">02</span><h3>Discover</h3><p>Traders list materials. Consumers search and define what they need.</p></article>
+    <article class="step"><span class="step-num">03</span><h3>Trade</h3><p>Review a material, connect with the other party and continue the exchange from your dashboard.</p></article>
+  </div>
+</section>
+<section class="section process-showcase">
+  <div class="process-layout">
+    <div>
+      <div class="kicker">03 · PROCESS</div>
+      <div class="section-head" style="display:block;margin-bottom:28px">
+        <h2>List, verify, <em>exchange.</em></h2>
+        <p style="margin-top:18px;max-width:650px">A structured flow for moving an industrial material from listing to a traceable exchange.</p>
+      </div>
+      <div class="process-grid">
+        <article class="process-card"><span class="step-num">01</span><h3>List your material</h3><p>Add material type, quantity, location, quality and available documentation.</p><small>~ 3 MIN · SELF-SERVE</small></article>
+        <article class="process-card"><span class="step-num">02</span><h3>Verify the listing</h3><p>Keep business and material information structured so potential consumers can evaluate the listing.</p><small>DOCUMENT-READY · TRACEABLE</small></article>
+        <article class="process-card"><span class="step-num">03</span><h3>Find the right match</h3><p>Compare compatible consumers, processors and alternative applications discovered by the platform.</p><small>AI-ASSISTED DISCOVERY</small></article>
+        <article class="process-card"><span class="step-num">04</span><h3>Exchange and record</h3><p>Move from request to transaction while preserving the material's exchange history.</p><small>END-TO-END RECORD</small></article>
+      </div>
+    </div>
+    <div class="process-visual">
+      <div class="process-overlay">
+        <div>
+          <div class="kicker">WASTE2WORTH FLOW</div>
+          <h3>From material<br>to <em>next use.</em></h3>
+          <p>One platform connecting industrial supply with industrial demand — without making the public landing page feel like a dashboard.</p>
+        </div>
+        <div class="process-route"><span>TRADER</span><b>→</b><span>MATERIAL</span><b>→</b><span>AI MATCH</span><b>→</b><span>CONSUMER</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section categories-section">
+  <div class="section-head">
+    <div><div class="kicker">04 · CATEGORIES</div><h2>Industrial material <em>types.</em></h2></div>
+    <p>Browse broad material families first. Specific grades, properties and requirements can be handled inside the marketplace.</p>
+  </div>
+  <div class="category-grid">
+    <article class="category-card"><h3>Metals</h3><p>Steel, aluminium, copper, brass and industrial metal residues.</p><div class="category-icon"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7"><circle cx="50" cy="50" r="25"/><circle cx="50" cy="50" r="8"/><path d="M50 8v17M50 75v17M8 50h17M75 50h17M20 20l12 12M68 68l12 12M80 20L68 32M32 68L20 80"/></svg></div></article>
+    <article class="category-card"><h3>E-waste</h3><p>Circuit boards, electronic components, servers and industrial electronics.</p><div class="category-icon"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7"><rect x="28" y="28" width="44" height="44" rx="5"/><rect x="40" y="40" width="20" height="20"/><path d="M15 35h13M15 50h13M15 65h13M72 35h13M72 50h13M72 65h13M35 15v13M50 15v13M65 15v13M35 72v13M50 72v13M65 72v13"/></svg></div></article>
+    <article class="category-card"><h3>Polymers</h3><p>HDPE, PP, PET, PVC and mixed industrial polymer streams.</p><div class="category-icon"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7"><path d="M50 12l18 10-10 17M50 12L32 22l10 17M68 22l14 24-19 11M82 46l-14 1M63 57l-9-17M18 46l14-1M18 46l-3 17 18 10M35 72l15 9 15-9M50 81l-9-16M32 45l9 16"/></svg></div></article>
+    <article class="category-card"><h3>Minerals</h3><p>Slag, ash, foundry sand, mineral residues and process by-products.</p><div class="category-icon"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7"><path d="M20 72h60M27 72V43l23-20 23 20v29M38 72V54h24v18M15 43h70"/></svg></div></article>
+    <article class="category-card"><h3>Paper & Fibre</h3><p>OCC, industrial paper, fibre residues and packaging materials.</p><div class="category-icon"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7"><path d="M27 14h31l17 17v55H27zM58 14v19h17M38 48h26M38 62h26M38 76h17"/></svg></div></article>
+    <article class="category-card"><h3>Mixed Industrial</h3><p>Unsorted or multi-material streams that need further processing or separation.</p><div class="category-icon"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7"><path d="M50 12l31 18v36L50 84 19 66V30zM19 30l31 18 31-18M50 48v36"/></svg></div></article>
+  </div>
+</section>
+
+
+
+
+<section class="section why-section">
+  <div class="why-inner">
+    <div class="kicker">05 · WHY WASTE2WORTH</div>
+    <h2>Built for industrial <em>material flows.</em></h2>
+    <p class="why-intro">Not just a directory of waste. Waste2Worth is designed around the information a real exchange needs: material details, compatibility, pathway options and a record of what happened next.</p>
+    <div class="why-grid">
+      <article class="why-card"><span class="step-num">01</span><h3>Material-first discovery</h3><p>Search by material characteristics and requirements instead of relying only on broad waste categories or keywords.</p></article>
+      <article class="why-card"><span class="step-num">02</span><h3>Pathway visibility</h3><p>When a direct consumer is not available, the platform can surface processor or alternative-use pathways for review.</p></article>
+      <article class="why-card"><span class="step-num">03</span><h3>Traceable exchange</h3><p>Keep listing information, requests, documents and exchange history connected to the material record.</p></article>
+    </div>
+  </div>
+</section>
+<footer>
+  <a class="logo" href="#"><span class="logo-mark"></span><span>WASTE<span>2</span>WORTH</span></a>
+  <div class="footer-links"><a href="#marketplace">Marketplace</a><a href="#how">How it works</a></div>
+  <div class="footer-copy">© 2026 Waste2Worth</div>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-card">
+    <button class="close" onclick="closeModal()">×</button>
+    <div class="kicker">WASTE2WORTH</div>
+    <h3 id="modalTitle">Choose your role</h3>
+    <p id="modalText">Continue as a Trader or Consumer.</p>
+    <div class="modal-actions">
+      <button class="trader" onclick="continueRole('Trader')">Trader →</button>
+      <button class="consumer" onclick="continueRole('Consumer')">Consumer →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const materials=[
+ {name:"Steel Slag — High Grade",cat:"Minerals",meta:"240 MT · Chennai",price:"₹6,200",unit:"/MT"},
+ {name:"Fly Ash — Class F",cat:"Minerals",meta:"120 MT · Coimbatore",price:"₹1,450",unit:"/MT"},
+ {name:"Aluminium Offcuts",cat:"Metals",meta:"18 MT · Hosur",price:"₹142",unit:"/kg"},
+ {name:"HDPE Industrial Scrap",cat:"Polymers",meta:"32 MT · Bengaluru",price:"₹54",unit:"/kg"},
+ {name:"Foundry Sand — Used",cat:"Minerals",meta:"85 MT · Chennai",price:"₹2,100",unit:"/MT"},
+ {name:"Copper Process Residue",cat:"Metals",meta:"7.5 MT · Hyderabad",price:"₹318",unit:"/kg"}
+];
+function renderHero(){
+ document.getElementById("heroListings").innerHTML=materials.slice(0,5).map(x=>`<div class="listing"><span class="bullet"></span><div><strong>${x.name}</strong><small>${x.meta}</small></div><div class="price">${x.price}<small>${x.unit}</small></div></div>`).join("");
+}
+function renderMaterials(filter="All"){
+ const arr=filter==="All"?materials:materials.filter(x=>x.cat===filter);
+ document.getElementById("materials").innerHTML=arr.map((x,i)=>`<article class="material-card"><span class="tag ${i%3===1?"amber":""}">VERIFIED LISTING</span><h3>${x.name}</h3><div class="sub">${x.cat} · industrial material</div><div class="meta"><b>${x.meta.split(" · ")[0]}</b><span>${x.meta.split(" · ")[1]}</span></div><div class="card-bottom"><small>${x.price}${x.unit}</small><button onclick="openRoleModal('View material')">View material →</button></div></article>`).join("");
+}
+function filterMaterials(cat,btn){document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));btn.classList.add("active");renderMaterials(cat)}
+function openRoleModal(title){document.getElementById("modalTitle").textContent=title;document.getElementById("modalText").textContent="Use one sign-in and choose your role: Trader or Consumer.";document.getElementById("modal").classList.add("open")}
+function closeModal(){document.getElementById("modal").classList.remove("open")}
+function continueRole(role){
+  if(role === 'Trader'){
+    window.location.href = 'trader/login.html';
+    return;
+  }
+  window.location.href = 'consumer/marketplace.html';
+}
+renderHero();renderMaterials();
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+</script>
+</body>
+</html>
