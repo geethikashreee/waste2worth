@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Waste2Worth — Trader Sign in</title>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+<div class="top"><span>● WASTE2WORTH</span><span>TRADER ACCESS</span><span class="right">B2B INDUSTRIAL RESOURCE EXCHANGE</span></div>
+<main>
+  <a class="back" href="../index.html">← Back to marketplace</a>
+  <section class="login-wrap">
+    <div class="intro">
+      <div class="brand"><i></i>WASTE<span>2</span>WORTH <small>B2B</small></div>
+      <div class="eyebrow">TRADER WORKSPACE</div>
+      <h1>Sign in to your<br><em>trading workspace.</em></h1>
+      <p>Manage materials, AI matches, exchange requests, pathways, passports and impact estimates from one workspace.</p>
+      <div class="points"><span>✓ Material listings</span><span>✓ AI matching</span><span>✓ Exchange tracking</span></div>
+    </div>
+    <form class="login-card" onsubmit="loginTrader(event)">
+      <div class="eyebrow">TRADER SIGN IN</div>
+      <h2>Welcome back.</h2>
+      <p class="muted">Enter your workspace details to continue.</p>
+      <label>WORK EMAIL<input id="email" type="email" placeholder="you@company.com" required></label>
+      <label>PASSWORD<input id="password" type="password" placeholder="••••••••" required></label>
+      <div class="row"><label class="check"><input type="checkbox"> Remember me</label><a href="#" onclick="alert('Password recovery can be connected to the backend later.');return false">Forgot password?</a></div>
+      <button type="submit">Sign in to trader workspace →</button>
+      <div class="demo">Demo prototype · Any valid email and password will open the trader dashboard.</div>
+    </form>
+  </section>
+</main>
+<script>
+function loginTrader(e){e.preventDefault();sessionStorage.setItem('w2wTraderLoggedIn','true');window.location.href='dashboard.html';}
+</script>
+</body>
+</html>
