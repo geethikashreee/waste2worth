@@ -1,0 +1,1 @@
+function openRole(){document.getElementById('role').classList.add('open')}function closeRole(){document.getElementById('role').classList.remove('open')}document.addEventListener('click',e=>{if(e.target.id==='role')closeRole()})
