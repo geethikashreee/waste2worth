@@ -136,13 +136,13 @@
   <div class="how-grid"><div><b>01</b><h3>Post your requirement</h3><p>Define material type, quantity, grade, properties and delivery location.</p></div><div><b>02</b><h3>AI finds compatible supply</h3><p>Waste2Worth compares your requirements with available material fingerprints.</p></div><div><b>03</b><h3>Compare the pathway</h3><p>Review compatibility, logistics, processing and estimated impact before requesting an exchange.</p></div></div>
 </section>
 
-<section id="requirements" class="requirement"><div><div class="eyebrow">CONSUMER WORKSPACE</div><h2>Need a specific input?</h2><p>Create a requirement and let the matching engine surface suitable material.</p></div><a href="#" href="workspace.html" onclick="return true">Create requirement →</a></section>
+<section id="requirements" class="requirement"><div><div class="eyebrow">CONSUMER WORKSPACE</div><h2>Need a specific input?</h2><p>Create a requirement and let the matching engine surface suitable material.</p></div><a href="workspace.html">Create requirement →</a></section>
 </main>
 <script>
 let active='All';
 function setFilter(cat,btn){active=cat;document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');filterCards();}
 function filterCards(){const q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.listing').forEach(c=>{const okCat=active==='All'||c.dataset.cat===active;const okText=c.dataset.search.includes(q);c.style.display=okCat&&okText?'block':'none';});}
-<script src="app.js"></script>
 </script>
+<script src="app.js"></script>
 </body>
 </html>
