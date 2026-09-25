@@ -18,19 +18,23 @@
       <div class="points"><span>✓ Material listings</span><span>✓ AI matching</span><span>✓ Exchange tracking</span></div>
     </div>
     <form class="login-card" onsubmit="loginTrader(event)">
-      <div class="eyebrow">TRADER SIGN IN</div>
-      <h2>Welcome back.</h2>
+      <div class="eyebrow" id="authEyebrow">TRADER SIGN IN</div>
+      <h2 id="authTitle">Welcome back.</h2>
       <p class="muted">Enter your workspace details to continue.</p>
       <label>WORK EMAIL<input id="email" type="email" placeholder="you@company.com" required></label>
+      <label id="companyField" style="display:none">COMPANY NAME<input id="company" type="text" placeholder="ABC Industries"></label>
       <label>PASSWORD<input id="password" type="password" placeholder="••••••••" required></label>
       <div class="row"><label class="check"><input type="checkbox"> Remember me</label><a href="#" onclick="alert('Password recovery can be connected to the backend later.');return false">Forgot password?</a></div>
-      <button type="submit">Sign in to trader workspace →</button>
-      <div class="demo">Demo prototype · Any valid email and password will open the trader dashboard.</div>
+      <button type="submit" id="authButton">Sign in to trader workspace →</button>
+      <button type="button" class="switch-auth" onclick="toggleSignup()" id="switchAuth">Create a trader account</button>
+      <div class="demo">Demo prototype · Signup and sign-in use frontend session state; no real account is created yet.</div>
     </form>
   </section>
 </main>
 <script>
-function loginTrader(e){e.preventDefault();sessionStorage.setItem('w2wTraderLoggedIn','true');window.location.href='dashboard.html';}
+let signup=false;
+function toggleSignup(){signup=!signup;document.getElementById('authEyebrow').textContent=signup?'TRADER SIGN UP':'TRADER SIGN IN';document.getElementById('authTitle').textContent=signup?'Create your workspace.':'Welcome back.';document.getElementById('companyField').style.display=signup?'grid':'none';document.getElementById('authButton').textContent=signup?'Create trader workspace →':'Sign in to trader workspace →';document.getElementById('switchAuth').textContent=signup?'Already have an account? Sign in':'Create a trader account';}
+function loginTrader(e){e.preventDefault();sessionStorage.setItem('w2wTraderLoggedIn','true');sessionStorage.setItem('w2wTraderEmail',document.getElementById('email').value);window.location.href='dashboard.html';}
 </script>
 </body>
 </html>
